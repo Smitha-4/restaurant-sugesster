@@ -1,0 +1,119 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>{% block title %}    {% endblock %}</title>
+
+    
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <!-- FontAwesome 6.2.0 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- (Optional) Use CSS or JS implementation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
+        integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+    <nav class="nav nav-fill">
+        <li class="nav-item">
+            <a class="nav-link active" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="{% url 'preprocess' %}" tabindex="-1" aria-disabled="true">Data Preprocessing</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="{% url 'ml' %}" tabindex="-1" aria-disabled="true">ML Model
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="{% url 'analysis' %}" tabindex="-1" aria-disabled="true">Data Visualization
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="{% url 'dashboard1' %}" tabindex="-1" aria-disabled="true">Dashboard</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="{% url 'sentiment' %}" tabindex="-1" aria-disabled="true">Sentiment Analysis</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="{% url 'dashboard2' %}" tabindex="-1" aria-disabled="true">Sentiment Analysis
+                Dashboard</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="{% url 'suggestor' %}" tabindex="-1" aria-disabled="true">Restaurant suggesster</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link " href="https://smitha-4.github.io/Jr-Data-Analyst-resume/" tabindex="-1"
+                aria-disabled="true">About me</a>
+        </li>
+    </nav>
+    <div id="top"></div>
+    {% block aside %}
+        
+    {% endblock %}
+    <div class="container1">
+        <div class="main-div" style="padding-left: 10%;">
+        {% block content %}
+        {% endblock%}
+    </div>
+        <aside><a href="#top" style="float: right;">Back to Top &UpArrowBar;</a></aside>
+    </div>
+
+
+
+    <footer>
+        <div class="image">
+            <h2>Locate me <i class="fa fa-location-arrow" aria-hidden="true"></i></h2>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d208.1887920398659!2d75.84982910482319!3d12.595701932895953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sin!4v1685604242946!5m2!1sen!2sin"
+                style="border:0;padding: 15px;margin-top: 20px;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="image">
+            <h2 style="color: rgb(255, 255, 255);">Connect to me via</h2>
+            <br><br>
+            <h6><a style="color: white; text-align:left;" class="footer_links" href="mailto:reachto.smitha@yahoo.com">
+                    <i class="fas fa-envelope"></i> reachto.smitha@yahoo.com</a></h6>
+            <h6> <a style="color: white;text-align:left;" class="footer_links" href="tel:+919742330941"><i
+                        class="fa fa-phone" aria-hidden="true"></i> +91 9742330941</a></h6>
+            <h6><a style="color: white;text-align:left;" href="https://www.linkedin.com/in/smitha4r/"
+                    class="footer_links" target="_blank"> <i class="fab fa-linkedin"></i> LinkedIn</a></h6>
+            <h6><a style="color: white;text-align:left;" target="_blank" href="https://github.com/Smitha-4"
+                    class="footer_links"><i class="fab fa-github-square"></i> GitHub</a></h6>
+            <h6><a style="color: white;text-align:left;" target="_blank" href="https://jovian.com/reachto-smitha/"
+                    class="footer_links"><i class="fab fa-github-square"></i> Jovian</a></h6>
+            <h6 style="color: rgb(255, 255, 255);">For the original code and dataset <a
+                    href="https://jovian.com/reachto-smitha/scraping-solar-panel-details-of-varies-solar-companies-accross-the-world"
+                    target="_blank" rel="noopener noreferrer"> click here</a></h6>
+            <br>
+        </div>
+        <div class="image" style="float: right;">
+            <img src="{% static 'my sketch by me new.jpg' %}">
+            <br><br><br><br>
+        </div>
+    </footer>
+</body>
+
+
+</html>

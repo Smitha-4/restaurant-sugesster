@@ -1,0 +1,171 @@
+{% extends 'base.html' %}
+{%load static%}
+    {% block aside %}
+    <aside>
+        <div class="sidenav" style="float:right;width:300px;position:fixed;">
+            <h4>Table of Contents</h4>
+            <ul class="side-menu">
+                <li> <a href="#Intro">Introduction</a> </li>
+                <li> <a href="#d-transf">Data Transformation</a> </li>
+                <li><a href="#k-means">K-means clustering Model</a> </li>
+                <li><a href="#content-based">Content Based Recommendation</a></li>
+                <li><a href="#testing">Testing of models</a></li>
+                <li><a href="#Supportingfiles">Supporting files</a></li>
+            </ul>
+        </div>
+    </aside>
+    {% endblock %}
+    
+{% block content %}
+    
+
+            <center>
+                <h1>Building Machine Learning models on Restaurants Datastet</h1>
+            </center>
+            <div class="sub-div" id="Intro">
+                <h2>Introduction to model selection</h2>
+
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;There are supervised and unsupervied machine learning algorithms
+                    for making a recommendation system. I
+                    am going to use unspervied algorithms to make the model. I will be using k-means algorithm for
+                    clustering the restaruant based on different areas in bengaluru. I will also be using TFID method to
+                    make the recommedations based on the type of the restaurant.
+                    <br>
+                    There are many Machine Learning model architures.
+                    When I saw the dataset, I wanted to build a machine learning model based off user's reviews,
+                    cuisines, restaurant type and location
+                    <br>Cuisinies, restaurant type and location were categorical variables. The restaurants can be
+                    grouped based on location using clustering architures.
+                    <br>The best suited architecture is K-means clustering algorithm.
+                    <br> Also I wanted to build a model based on users rating as well. Since Rating was a numerical
+                    column, I could easily apply ensemble machine learning model such as XG-Boost. I also tried SVM
+                    algorithm.
+                    <br> One of the famous filtering method is collaborative filtering using TFIDF. I used this
+                    technique on users reviews and Cuisines they serve to filter out the
+                    restaurants depending on sentiments scores obtained using TFIDF vectorization and NLP techniques.
+                    <br><br>
+                    After this I tested the model with the test data as well. In onrder to validate the trained model i
+                    used K-fold cross validation technique.
+                    <br> The final results were ploted and for collaborative filtering I tested out the function using
+                    the name of the dish.
+
+                </p>
+            </div>
+            <div class="sub-div" id="d-transf">
+                <h3>Data Transformation</h3>
+                <p>Before applying any algorithm, the first step is to scale and transform the raw data into ml model
+                    ready input.
+                    To acheive this I used one hot encoding. One hot encoding is a method to convert the categorical
+                    features into a machine readble values which can be later used for modeling </p>
+                <p>To acheive this I used get_dummies from pandas module. I made sure that the cuisines are grouped
+                    according to type of the restaurant. Later I again grouped based on different areas of location in
+                    Bengaluru. <br>
+                    <img src="{% static 'ml/ml1.png' %}"><br>
+                    <img src="{% static 'ml/ml2.png' %}"><br>
+                    <img src="{% static 'ml/ml2.png' %}"><br>
+                    <br>I checked for the number of occurance of each type of restaurant and tried to sort the
+                    restaurant based on frequency of occurance. For easier representation, I turned this output into a
+                    pandas dataframe.
+                </p>
+                <br>
+                <img src="{% static 'ml/ml4.png' %}"><br>
+                <img src="{% static 'ml/ml5.png' %}"><br>
+                <img src="{% static 'ml/ml6.png' %}"><br>
+                <img src="{% static 'ml/ml7.png' %}"><br>
+            </div>
+            <div class="sub-div" id="k-means">
+                <h4>A brief of K-means clustering</h4>
+                <p>
+                    k-means clustering is a method of vector quantization, originally from signal processing, that aims
+                    to
+                    partition n observations into k clusters in which each observation belongs to the cluster with the
+                    nearest mean (cluster centers or cluster centroid), serving as a prototype of the cluster. This
+                    results
+                    in a partitioning of the data space into Voronoi cells. k-means clustering minimizes within-cluster
+                    variances (squared Euclidean distances), but not regular Euclidean distances, which would be the
+                    more
+                    difficult Weber problem: the mean optimizes squared errors, whereas only the geometric median
+                    minimizes
+                    Euclidean distances. For instance, better Euclidean solutions can be found using k-medians and
+                    k-medoids.
+                    <br>The first step in implementing the algorithm is to find the number of clusters. Second,
+                    instansiate the algorithm class and
+                    fit our data into the model. The following figures shows the exact methods I used. I found that
+                    number of clusters were 3 for this problem.
+                    <br>
+                    <img src="{% static 'ml/ml8.png' %}"><br>
+                    <img src="{% static 'ml/ml9.png' %}"><br>
+                    <img src="{% static 'ml/ml10.png' %}"><br>
+                    <img src="{% static 'ml/ml11.png' %}"><br>
+                    Later I checked the columns of the dataframe and sorted it. The result was a dataframe in which the
+                    restaurants were clustred based on type of the restaurant and location. The following figure shows
+                    the ranking of restaurant types in each area of location.
+                    <br>
+                    <img src="{% static 'ml/ml12.png' %}"><br>
+                    <img src="{% static 'ml/ml13.png' %}"><br>
+                    <img src="{% static 'ml/ml14.png' %}"><br>
+                    <img src="{% static 'ml/ml15.png' %}"><br>
+                    <img src="{% static 'ml/ml16.png' %}"><br>
+                    <img src="{% static 'ml/ml17.png' %}"><br>
+                    <img src="{% static 'ml/ml18.png' %}"><br>
+                    <img src="{% static 'ml/ml19.png' %}"><br>
+                    <img src="{% static 'ml/ml20.png' %}"><br>
+                    <img src="{% static 'ml/ml21.png' %}"><br>
+                    <img src="{% static 'ml/ml22.png' %}"><br>
+                    <img src="{% static 'ml/ml23.png' %}"><br>
+                    <img src="{% static 'ml/ml24.png' %}"><br>
+                    <img src="{% static 'ml/ml25.png' %}"><br>
+                    <img src="{% static 'ml/ml26.png' %}"><br>
+
+                </p>
+                
+            </div>
+            <div class="sub-div" id="content-based">
+                <h3 >Content Based Recommendation</h3>
+                <p>TF-IDF Matrix (Term Frequency — Inverse Document Frequency Matrix)
+                    TF-IDF method is used to quantify words and compute weights for them.In other words, representing
+                    each word (or couples of words etc.) with a number in order to use mathematics in our recommender
+                    system. Put simply, the higher the TF*IDF score (weight), the rarer and more important the term, and
+                    vice versa
+
+                    Cosine similarity is a metric used to determine how similar the documents are irrespective of their
+                    size.
+
+                    Here, the tfidf_matrix is the matrix containing each word and its TF-IDF score with regard to each
+                    document, or item in this case. Also, stop words are simply words that add no significant value to
+                    our system, like ‘an’, ‘is’, ‘the’, and hence are ignored by the system.[3]
+
+                    Now, I have a representation of every item in terms of its description. Next, I need to calculate
+                    the relevance or similarity of one document to another.</p>
+                <img src="{% static 'tfidf/tfidf1.png' %}"><br>
+                <img src="{% static 'tfidf/tfidf2.png' %}"><br>
+                <img src="{% static 'tfidf/tfidf3.png' %}"><br>
+                <img src="{% static 'tfidf/tfidf4.png' %}"><br>
+                <img src="{% static 'tfidf/tfidf5.png' %}"><br>
+                <img src="{% static 'tfidf/tfidf6.png' %}"><br>
+                <img src="{% static 'tfidf/tfiidf7.png' %}"><br>
+                <img src="{% static 'tfidf/tfidf7.png' %}"><br>
+                <img src="{% static 'tfidf/tfidf8.png' %}"><br>
+                <img src="{% static 'tfidf/tfidf9.png' %}"><br>
+                <img src="{% static 'tfidf/tfidf10.png' %}"><br>
+                <img src="{% static 'tfidf/tfidf11.png' %}"><br>
+                <img src="{% static 'tfidf/tfidf12.png' %}"><br>
+                <img src="{% static 'tfidf/tfidf13.png' %}"><br>
+                <img src="{% static 'tfidf/tfidf14.png' %}"><br>
+                <img src="{% static 'tfidf/tfidf15.png' %}"><br>
+            </div>
+            <div class="sub-div" id="testing">
+                <h3>Testing of models</h3>
+                <p> I prepared a website which shows the top 10 recommended restaurants for a search query. Please Click
+                    on the link below. or click on the suggesstor tab in the menu.</p>
+                    <a href="#">Restaurant suggesstor</a>
+            </div>
+            
+            <div class="sub-div" id="Supportingfiles">
+                <h1>Supporting Files</h1>
+                <h6>The raw dataset files, the Jupyter Notebooks which I worked on to clean, analyze and create the models of the data are found on my
+                    github ripository. Please Click on <a href="#">Supporting files</a></h6>
+            </div>
+            {% endblock %}
+        
+

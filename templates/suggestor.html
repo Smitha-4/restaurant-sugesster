@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Restaurant Suggester
+{% endblock %}
+{% block content %}
+
+
+<div class="sub-div" id="introduction">
+    <center>
+        <h1>Restaurant Suggestor</h1>
+        <p>Hello! Welcome to the working site of my restaurants model. This page displays a list of Recommended
+            restaurnts upon searching for a restaurnt in Bengaluru city.
+            <br> Please be patient for two mins as my model takes a little bit of time to process and display the
+            output.
+            <br> For location, You can search any place in Bengaluru. Cuisines are for example South Indian, North
+            Indian, Itallian, Chinese etcetra could be used. You can also search for direct dishes for example Pizza.
+            <br> The ideal format for searching is dish or cuisine including the location. for example "Pizza Place in
+            Whitefield"
+            <br><br>
+            <i class="fa fa-sticky-note" aria-hidden="true"></i> ** Use <a href="https://bangaloretoday.in/bangalore-area-names-list/" target="_blank" rel="noopener noreferrer">this file</a> for location if you don't know. 
+        </p>
+
+        <h2>Find Your Perfect Restaurant</h2>
+        <p style="text-align: center;">Write your query below. Search for a type of food in any area in Bengaluru</p>
+        <form method="POST">
+            {% csrf_token %}
+            <label for="input_text">Tell me your preferences:</label><br>
+            <input id="input_text" style="text-align:center;width: 550px; padding: 10px; border-radius:10%;box-shadow:2px 10px 10px ;"
+                name="input_text"><br><br><br>
+            <button style="width: 250px; padding: 10px; border-radius:10%;box-shadow:2px 10px 10px ;" type="submit">Get Recommendations</button>
+        </form>
+<br><br><br><br><br><br>
+        <h2>Recommended restaurants</h2>
+
+        {{recommendations|safe}}
+
+
+
+</div>
+{% endblock %}

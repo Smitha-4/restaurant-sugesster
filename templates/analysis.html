@@ -1,0 +1,614 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+EDA | Restaurant Data Analysis
+{% endblock %}
+{% block aside %}
+<aside>
+    <div class="sidenav" style="float:right; width:380px;position:fixed;">
+        <h4>Table of Contents</h4>
+        <ul class="side-menu">
+            <li> <a href="#Introduction">Introduction</a> </li>
+            <li> <a href="#graph1">Top expensive restaurants</a> </li>
+            <li><a href="#graph2">Highly Voted Restaurants</a> </li>
+            <li> <a href="#graph3">Top Dishes liked by users</a></li>
+            <li><a href="#graph4">Low priced Restaurants</a></li>
+            <li><a href="#graph5">Top 10 Restaurant Types</a></li>
+            <li><a href="#graph6">Bestseller Cuisines</a></li>
+            <li><a href="#graph7">Highly Rated Restaurants</a></li>
+            <li><a href="#graph8">Restaurants with Reservation facility</a></li>
+            <li><a href="#graph9">Restaurants with online order Facility</a> </li>
+              <li><a href="#Supportingfiles">Supporting files</a></li>
+        </ul>
+    </div>
+</aside>
+{% endblock %}
+
+{% block content %}
+
+<center>
+    <br><br><br><br>
+    <h1>Analysis of Restaurants based in Bengaluru</h1>
+</center>
+<div class="sub-div" id="Introduction" style="margin-left: 2%;">
+    <center>
+    <h3>Introduction</h3>
+    <p>Below are the images of the graphs which I plotted of the restaurant Dataset. There are other images as well,
+        where I had anayzed the affects of different features like rating, restaurant types, cuisines etcera over
+        location. I felt it was repetative and unrequired. Hence I did not include in the display here. </p>
+    </center>
+    </div>
+
+<div class="sub-div" id="graph1">
+    <center>
+
+        <h2>Top expensive Restaurants</h2>
+        <img src="{% static '/data-viz/Top 10 expensive Restaurants.png'%}">
+        <div class="graph" style="text-align:justify;">
+
+            <p>The graph shows the top 10 expensive restaurants across the city. <br>
+            <h3>Here are some of the interesting findings from the graph:</h3>
+            <br>
+            <ul>
+                <li>A franchisie of Le Cirque Signature at The Leela Palace in New Delhi, India, is the most
+                    expensive
+                    restaurant on the list, with an average price of ₹6,000 per person.</li>
+                <li>The next two most expensive restaurants are both a Franchisie of restaurants in Hong Kong:
+                    Grid
+                    99-The Ritz-Carlton at HK$4,000 per person and La Brasserie-Le Meridien at HK$4,100 per
+                    person.
+                </li>
+                <li>The remaining seven restaurants on the list are all in India: Jamavar-The Leela Palace in
+                    Bengaluru
+                    (₹4,000 per person), Alba-JW Marriott Bengaluru (₹4,000 per person), Dakshin-ITC Windsor in
+                    Chennai
+                    (₹4,000 per person), Malties Radisson Blu in Bengaluru (₹4,500 per person), Edo Restaurant &
+                    Bar-ITC
+                    Gardenia in Bengaluru (₹4,000 per person), Dum Pukht Jolly Nabobs ITC Windsor in Chennai
+                    (₹5,000
+                    per
+                    person), and Royal Afghan-ITC Windsor in Chennai (price unavailable).</li>
+                <li>It is important to note that these prices are just averages, and the actual cost of dining
+                    at
+                    any of
+                    these restaurants can vary depending on a number of factors, such as the menu items you
+                    order
+                    and
+                    the type of wine or liquor you drink. Additionally, these prices may not include taxes or
+                    gratuity
+                </li>
+            </ul>
+            </p>
+        </div>
+    </center>
+</div>
+<div class="sub-div" id="graph2">
+    <center>
+        <h2>Highly Voted Restaurants</h2>
+        <img src="{% static 'data-viz/Highly Voted Restaurants.png' %}">
+        <div class="graph" style="text-align:justify;">
+
+            <p>The bar graph showing the highest voted restaurants in Bengaluru. It is based on user reviews on
+                Zomato
+                <br>
+            <h3>Here are some of the interesting findings from the graph:</h3>
+            <br>
+            <ul>
+                <li>The y-axis shows the average Zomato rating, with scores ranging from 4.4 to 4.8</li>
+                <li>The x-axis shows the names of the restaurants.</li>
+                <li>The most popular restaurant, based on average rating, is Arbor Brewing Company, with a score
+                    of
+                    4.8
+                </li>
+                <li> The other restaurants on the list have average ratings between 4.4 and 4.7</li>
+            </ul>
+            <p>It's important to note that this graph only shows a small sample of the many restaurants in
+                Bengaluru,
+                and it doesn't take into account factors like price range, cuisine, or ambiance. Additionally,
+                user
+                reviews can be subjective, so it's always a good idea to do your own research before deciding
+                where
+                to
+                eat.
+                <br>
+                If you're looking for more information about any of the restaurants on this list, I recommend
+                searching
+                for them online or on Zomato itself. You can also read user reviews to get a sense of what other
+                diners
+                thought of their experience.
+            </p>
+            </p>
+        </div>
+    </center>
+</div>
+<div class="sub-div" id="graph3">
+    <center>
+        <h2>Top Dishes Liked by Users</h2>
+        <img src="{% static 'data-viz/Top Dishes Liked.png' %}">
+        <div class="graph" style="text-align:justify;">
+
+            <p>The graph shows It shows the top 10 most popular dishes
+                <br>
+            <h3>Here are the top 10 dishes, along with the number of votes or likes they received:</h3>
+            <br>
+            <ul>
+                <li>Paratha - 57</li>
+                <li>Biryani - 182</li>
+                <li>Pizza - 57</li>
+                <li>Waffles - 68</li>
+                <li> Coffee - not ranked</li>
+                <li>Friendly Staff - not ranked</li>
+                <li>Burgers - not ranked</li>
+                <li>Chicken Biryani - not ranked</li>
+            </ul>
+            <p>It is important to note that this graph does not tell us anything about the origin of these
+                dishes,
+                or
+                the restaurants that serve them. It also does not take into account the price range or
+                nutritional
+                value
+                of these dishes.
+                <br><br>
+                If you are interested in learning more about any of the dishes on this list, I would recommend
+                doing
+                some additional research online or asking a food expert.
+            </p>
+            </p>
+        </div>
+    </center>
+</div>
+<div class="sub-div" id="graph4">
+    <center>
+        <h2>Low Priced Restaurants</h2>
+        <img src="{% static 'data-viz/low priced restaurants.png' %}">
+        <div class="graph" style="text-align:justify;">
+            Below is a list of low-priced restaurants in Bengaluru, India. Here are the details
+            <center>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Restaurant Name</th>
+                            <th>Estimated Price per person</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Om Meals and Paratha Junction</td>
+                            <td>₹10,000</td>
+                        </tr>
+                        <tr>
+                            <td>Sri Ram Bhojanalay</td>
+                            <td>₹10,000</td>
+                        </tr>
+                        <tr>
+                            <td>Pavitra Naidu Mess</td>
+                            <td>₹15,000</td>
+                        </tr>
+                        <tr>
+                            <td>Murugan Vilas</td>
+                            <td>₹10,000</td>
+                        </tr>
+                        <tr>
+                            <td>The Punjabi Kitchen</td>
+                            <td>₹10,000</td>
+                        </tr>
+                        <tr>
+                            <td>Juice N Joy</td>
+                            <td>₹14,000</td>
+                        </tr>
+                        <tr>
+                            <td>Sri Manjunatha Fast Food</td>
+                            <td>₹10,000</td>
+                        </tr>
+                        <tr>
+                            <td>Yummy's Paratha</td>
+                            <td>₹10,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </center>
+            <p>Please note that the price listed is likely an estimate and may vary depending on the items that
+                user
+                order's. If
+                you have any specific questions about these restaurants or their prices, I recommend contacting
+                them
+                directly.</p>
+        </div>
+    </center>
+</div>
+<div class="sub-div" id="graph5">
+    <center>
+        <h2>Top Restaurant Types</h2>
+        <img src="{% static 'data-viz/Type of restaurants.png' %}">
+        <div class="graph" style="text-align:justify;">
+
+            <p>The graph is showing the top 10 restaurant types in the Benagluru, based on the number of
+                establishments:
+            <ul>
+                <li>The most popular restaurant type in the United States is "Quick Bites", with over 19,132
+                    establishments.
+                    This category likely encompasses a wide variety of fast-food and grab-and-go options, such
+                    as
+                    sandwich
+                    shops, salad bars, and cafes with quick service.</li>
+                <li>Casual Dining establishments come in at a close second, with 10,330 restaurants. This
+                    category
+                    likely
+                    includes sit-down restaurants with table service offering a wider selection of dishes than
+                    Quick
+                    Bites
+                    options.</li>
+                <li>Rounding out the top three is "Cafes" with 3,734 establishments. Cafes typically offer
+                    coffee,
+                    tea,
+                    and
+                    other beverages alongside light meals and pastries.</li>
+                <li>Other well-represented categories include:</li>
+                <ul>
+                    <li>Bakeries (1,253)</li>
+                    <li>Delivery (2,604)</li>
+                    <li>Dessert Parlors (2,263)</li>
+                    <li>Bars (697)</li>
+                    <li>Beverage Shops (867)</li>
+                    <li>Takeaway & Delivery (2,037)</li>
+                    <li>Casual Dining, Bar (1,154)</li>
+                </ul>
+            </ul>
+            <p>It's important to note that this graph only shows the number of establishments, not necessarily
+                the
+                popularity or revenue of each type. For example, while there are many Quick Bites restaurants,
+                they
+                may
+                have lower average revenue per customer than Casual Dining establishments.
+                <br>
+                Overall, the graph provides a snapshot of the diverse restaurant landscape in the United States,
+                with a
+                clear preference for quick and convenient dining options
+            </p>
+        </div>
+    </center>
+</div>
+<div class="sub-div" id="graph6">
+    <center>
+        <h2>Top Bestseller Cuisines</h2>
+        <img src="{% static 'data-viz/Top 10 Cuisines.png' %}">
+        <div class="graph" style="text-align:justify;">
+
+            <p>The graph shows the top 10 cuisines served across the city. The most popular cuisine is North
+                Indian,
+                followed by North Indian and Chinese, South Indian, Chinese, Biryani, Bakery, Bakery and
+                Desserts,
+                Desserts, and Fast Food.
+                <br>
+            <h3>Here are some of the interesting findings from the graph:</h3>
+            <br>
+            <ul>
+                <li>North Indian cuisine is the most popular, followed by a mix of other cuisines. This suggests
+                    that
+                    people in the city enjoy a variety of flavors, but North Indian food is still the most
+                    popular.
+                </li>
+                <li>There is a lot of overlap between different cuisines. For example, there are many
+                    restaurants
+                    that
+                    serve both North Indian and Chinese food. This suggests that people are open to trying
+                    different
+                    flavor combinations.</li>
+                <li>Desserts are popular. There are four different dessert categories in the top 10. This
+                    suggests
+                    that
+                    people in the city have a sweet tooth.</li>
+                <li>It is important to note that this graph is based on the number of restaurants serving each
+                    cuisine,
+                    not the number of people who eat each cuisine. So, it is possible that some cuisines are
+                    more
+                    popular than others, even though they have fewer restaurants.</li>
+            </ul>
+            </p>
+        </div>
+    </center>
+</div>
+<div class="sub-div" id="graph7">
+    <center>
+        <h2>Highly Rated restaurant</h2>
+        <img src="{% static 'data-viz/Highly rated restaurants.png' %}">
+        <div class="graph" style="text-align:justify;">
+            <p> The above graph is a list of the top 10 highly-rated restaurants in Bengaluru, based on Zomato
+                user
+                ratings.
+
+            <h3>Here's what I analysed</h3>
+            <ul>
+                <li>The restaurants are ranked by their average Zomato rating, displayed on a scale of 4.4 to
+                    4.8.
+                </li>
+                <li>The highest-rated restaurant is Flechazo, with an average rating of 4.80.</li>
+                <li>The other restaurants on the list have average ratings between 4.70 and 4.75.</li>
+                <li>The list includes a variety of cuisines, including Mediterranean, Japanese, Chinese, and
+                    Indian.
+                </li>
+                <li>Here are some additional details of the graph:</li>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Restaurant Name</th>
+                            <th>Cuisine</th>
+                            <th>Zomato Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Flechazo</td>
+                            <td>Mediterranean</td>
+                            <td>4.80</td>
+                        </tr>
+                        <tr>
+                            <td>CTR - Central Tibetan Restaurant</td>
+                            <td>Tibetan</td>
+                            <td>4.75</td>
+                        </tr>
+                        <tr>
+                            <td>Maziga</td>
+                            <td>Japanese</td>
+                            <td>4.75</td>
+                        </tr>
+                        <tr>
+                            <td>TBC Sky</td>
+                            <td>Continental & European</td>
+                            <td>4.70</td>
+                        </tr>
+                        <tr>
+                            <td>O.G. Variar & Sons</td>
+                            <td>Chettinad</td>
+                            <td>4.70</td>
+                        </tr>
+                        <tr>
+                            <td>The Black Pearl</td>
+                            <td>Seafood</td>
+                            <td>4.70</td>
+                        </tr>
+                        <tr>
+                            <td>Taaza Thindi</td>
+                            <td>North Indian</td>
+                            <td>4.70</td>
+                        </tr>
+                        <tr>
+                            <td>Barbecue by Punjab Grill</td>
+                            <td>Punjabi</td>
+                            <td>4.70</td>
+                        </tr>
+                        <tr>
+                            <td>ECHOES Koramangala</td>
+                            <td>Casual Dining</td>
+                            <td>4.70</td>
+                        </tr>
+                        <tr>
+                            <td>The Big Barbeque</td>
+                            <td>Barbeque</td>
+                            <td>4.70</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </ul>
+            <p> It is important to note that this list only represents a small sample of the many great
+                restaurants
+                in
+                Bengaluru, and it is based on user reviews on Zomato, which may not be entirely objective. If
+                you
+                are
+                looking for a restaurant in Bengaluru, I recommend doing your own research and reading reviews
+                from
+                a
+                variety of sources before making a decision.</p>
+            </p>
+
+        </div>
+    </center>
+</div>
+<div class="sub-div" id="graph8">
+    <center>
+        <h2>Restaurants with Reservation facility</h2>
+        <img src="{% static 'data-viz/Top 10 Cuisines.png' %}">
+        <div class="graph" style="text-align:justify;">
+
+            <p>The graph shows the number of restaurants in Bangalore that offer online reservations,
+                categorized by
+                various cuisines.
+                <br>
+            <h3>Here's a breakdown of the information of the graph</h3>
+
+            <h4> Cuisines with the highest number of restaurants offering online reservations:</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cuisine</th>
+                        <th>Number of Restaurants with Online Reservation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>North Indian</td>
+                        <td>5,565</td>
+                    </tr>
+                    <tr>
+                        <td>South Indian</td>
+                        <td>3,419</td>
+                    </tr>
+                    <tr>
+                        <td>Chinese</td>
+                        <td>1,961</td>
+                    </tr>
+                    <tr>
+                        <td>Bakery</td>
+                        <td>890</td>
+                    </tr>
+                    <tr>
+                        <td>Desserts</td>
+                        <td>582</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+
+            <h4>Cuisines with the lowest number of restaurants offering online reservations:</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cuisine</th>
+                        <th>Number of Restaurants with Online Ordering</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Rolls</td>
+                        <td>86</td>
+                    </tr>
+                    <tr>
+                        <td>Momos</td>
+                        <td>74</td>
+                    </tr>
+                    <tr>
+                        <td>Biryani</td>
+                        <td>63</td>
+                    </tr>
+                    <tr>
+                        <td>Shakes & Smoothies</td>
+                        <td>59</td>
+                    </tr>
+                    <tr>
+                        <td>Street Food</td>
+                        <td>54</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+            <h3>Overall trends:</h3>
+            <ul>
+                <li>A significant majority of restaurants in Bangalore offer online reservations, with some
+                    exceptions
+                    in niche
+                    categories like street food and momos</li>
+                <li>North Indian cuisine has the most restaurants with online reservations, followed by South
+                    Indian
+                    and
+                    Chinese
+                    cuisine.</li>
+                <li>Dessert and bakery restaurants also have a high adoption rate of online reservations.</li>
+
+            </ul>
+
+            <h3></h3>
+
+            Additionally
+
+            The graph shows the total number of restaurants in each cuisine category as 55565, so it's possible
+            to calculate the percentage of restaurants offering online reservations within each category.
+            It's also important to remember that this data might not be exhaustive and may not include all
+            restaurants in Bangalore.
+            <br>
+            <ul>
+                <li>Market penetration: A significant portion of the restaurant industry in Bangalore has
+                    adopted
+                    online
+                    reservation systems, with almost 56,000 restaurants offering this convenience. This suggests
+                    a
+                    high
+                    level of
+                    digitalization and customer focus within the industry.</li>
+                <li>Demand for convenience: The widespread adoption of online reservations indicates a strong
+                    demand
+                    from
+                    customers for a convenient and efficient way to book their dining experiences. This
+                    highlights
+                    the
+                    importance of offering online booking options for restaurants to remain competitive.</li>
+                <li>Desserts are popular. There are four different dessert categories in the top 10. This
+                    suggests
+                    that
+                    people in the city have a sweet tooth.</li>
+                <li>Variations across cuisines: While the overall adoption rate is high, some cuisines still
+                    show
+                    lower
+                    numbers.
+                    This could be due to various factors, such as the target audience, type of dining
+                    experience, or
+                    the
+                    prevalence of traditional walk-in culture within specific cuisines.</li>
+            </ul>
+            </p>
+
+
+
+        </div>
+    </center>
+</div>
+<div class="sub-div" id="graph9">
+    <center>
+        <h2>Restaurants with Online Order Facility</h2>
+        <img src="{% static 'data-viz/Online order facility.png' %}">
+        <div class="graph" style="text-align:justify;">
+            <h3>It shows the distribution of restaurants on Zomato based on whether they offer online ordering.
+            </h3>
+            <ul>
+                <li> The x-axis represents the availability of online ordering: It has two categories, "Yes" and
+                    "No".
+                </li>
+                <li> The y-axis represents the number of restaurants: The scale starts at 0 and goes up to
+                    35,000
+                    with
+                    increments of 5,000.
+                </li>
+                <li>There are two bars:</li>
+                <ul>
+                    <li> The blue bar on the left represents restaurants that do not offer online ordering. Its
+                        height
+                        reaches around 20,000, indicating that there are approximately 20,000 restaurants on
+                        Zomato
+                        that
+                        don't have online ordering available.
+                    </li>
+                    <li> The green bar on the right represents restaurants that do offer online ordering. Its
+                        height
+                        reaches around 30,000, indicating that there are approximately 30,000 restaurants on
+                        Zomato
+                        that
+                        have online ordering available.
+                    </li>
+                </ul>
+            </ul>
+
+            <h3>Key takeaways:</h3>
+
+            <ul>
+                <li>More restaurants on Zomato offer online ordering than those that don't. This suggests that
+                    online
+                    ordering
+                    is becoming increasingly popular and convenient for both restaurants and customers.</li>
+                <li>There is still a significant number of restaurants that don't offer online ordering. This
+                    could
+                    be
+                    due to
+                    various reasons, such as the type of cuisine, target audience, or lack of resources.</li>
+                <li> the specific percentage of restaurants offering online ordering:
+                    <ul>
+                        <li>Restaurants with online ordering: 30,444</li>
+                        <li>Restaurants without online ordering: 31,570</li>
+                        <li>Total restaurants: 62,014</li>
+                        <li>Percentage of restaurants with online ordering: (30,444 / 62,014) * 100 ≈ 49.1%</li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </center>
+</div>
+<div class="sub-div" id="Supportingfiles">
+    <h1>Supporting Files</h1>
+    <h6>The raw dataset files, the Jupyter Notebooks which I worked on to clean, analyze and create the models of the data are found on my
+        github ripository. Please Click on <a href="#">Supporting files</a></h6>
+</div>
+{% endblock %}
