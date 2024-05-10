@@ -16,7 +16,7 @@ import glob
 import os 
   
 # merging the files 
-joined_files = os.path.join("dataset_files", "clean_file*.zip") 
+joined_files = os.path.join("data_for_sug", "clean_file*.zip") 
   
 # A list of all joined files is returned 
 joined_list = glob.glob(joined_files) 
